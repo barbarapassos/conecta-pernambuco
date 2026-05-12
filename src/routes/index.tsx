@@ -96,7 +96,7 @@ function Hero() {
           className="mt-6 text-[30px] md:text-[42px] font-bold text-white leading-[1.25] max-w-2xl"
           style={{ letterSpacing: "-0.5px" }}
         >
-          Gestão pública municipal mais <span style={{ color: "#93c5fd" }}>eficiente</span>
+          Gestão pública municipal mais <span style={{ color: "#fbbf24" }}>eficiente</span>
         </h1>
         <p
           className="mt-5 text-[13px] font-normal max-w-[360px]"
@@ -420,9 +420,8 @@ function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center gap-2">
-              <HexIcon className="w-5 h-5" color="#ffffff" />
-              <span className="text-white text-[14px] font-bold">COMUPE</span>
+            <div className="bg-white rounded-[10px] p-2 inline-block">
+              <img src={comupeLogo} alt="COMUPE" className="h-9 w-auto" />
             </div>
             <p className="mt-4 text-[10px]" style={{ color: "rgba(255,255,255,0.35)", lineHeight: 1.7 }}>
               Consórcio dos Municípios Pernambucanos<br />
