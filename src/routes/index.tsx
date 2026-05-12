@@ -182,18 +182,23 @@ function Licitacoes() {
         <SectionHeader badge="Transparência" title="Licitações recentes" subtitle="Processos licitatórios abertos disponíveis para os municípios consorciados." />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {licitacoes.map((c) => (
-            <article key={c.proc} className="bg-white border border-card-border rounded-[12px] p-[22px_20px] flex flex-col">
+            <article
+              key={c.proc}
+              className="rounded-[14px] p-[24px_22px] flex flex-col relative overflow-hidden group transition-transform hover:-translate-y-0.5"
+              style={{ backgroundColor: "#0d1b2e", border: "1px solid rgba(255,255,255,0.08)" }}
+            >
+              <div className="absolute top-0 left-0 w-full h-[3px]" style={{ backgroundColor: "#fbbf24" }} />
               <span
                 className="self-start text-[10px] font-semibold px-2.5 py-1 rounded-md"
-                style={{ backgroundColor: c.tagBg, color: c.tagText }}
+                style={{ backgroundColor: "rgba(251,191,36,0.15)", color: "#fbbf24" }}
               >
                 {c.tag}
               </span>
-              <div className="mt-3 text-[10px] font-medium text-soft-foreground">{c.proc}</div>
-              <h3 className="mt-2 text-[12.5px] font-semibold flex-1" style={{ color: "#1a2744", lineHeight: 1.55 }}>
+              <div className="mt-3 text-[10px] font-medium" style={{ color: "rgba(255,255,255,0.5)" }}>{c.proc}</div>
+              <h3 className="mt-2 text-[13px] font-semibold flex-1 text-white" style={{ lineHeight: 1.55 }}>
                 {c.titulo}
               </h3>
-              <a href="#" className="mt-4 text-[11px] font-semibold text-primary no-underline">Ver edital →</a>
+              <a href="#" className="mt-4 text-[11px] font-semibold no-underline" style={{ color: "#fbbf24" }}>Ver edital →</a>
             </article>
           ))}
         </div>
@@ -216,12 +221,25 @@ function Noticias() {
         <SectionHeader badge="Novidades" title="Notícias" subtitle="Fique por dentro das últimas novidades e ações do COMUPE." />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {noticias.map((c) => (
-            <article key={c.titulo} className="bg-white border border-card-border rounded-[12px] overflow-hidden">
-              <div style={{ height: 86, backgroundColor: c.bg }} />
-              <div className="p-[16px_18px]">
-                <div className="text-[10px] font-medium text-soft-foreground">{c.data}</div>
-                <h3 className="mt-2 text-[12.5px] font-semibold" style={{ color: "#1a2744", lineHeight: 1.55 }}>{c.titulo}</h3>
-                <a href="#" className="mt-3 inline-block text-[11px] font-semibold text-primary">Leia mais →</a>
+            <article
+              key={c.titulo}
+              className="rounded-[14px] overflow-hidden transition-transform hover:-translate-y-0.5"
+              style={{ backgroundColor: "#0d1b2e", border: "1px solid rgba(255,255,255,0.08)" }}
+            >
+              <div
+                style={{
+                  height: 90,
+                  background: `linear-gradient(135deg, ${c.bg} 0%, rgba(15,76,154,0.6) 100%)`,
+                  position: "relative",
+                }}
+              >
+                <div className="absolute top-3 left-3 text-[10px] font-semibold px-2.5 py-1 rounded-md" style={{ backgroundColor: "#fbbf24", color: "#0d1b2e" }}>
+                  {c.data}
+                </div>
+              </div>
+              <div className="p-[18px_20px]">
+                <h3 className="text-[13px] font-semibold text-white" style={{ lineHeight: 1.55 }}>{c.titulo}</h3>
+                <a href="#" className="mt-3 inline-block text-[11px] font-semibold" style={{ color: "#fbbf24" }}>Leia mais →</a>
               </div>
             </article>
           ))}
@@ -303,18 +321,22 @@ function Municipios() {
           className="w-full bg-white rounded-[9px] px-4 py-2.5 text-[12px] mb-5 outline-none focus:border-primary"
           style={{ border: "1.5px solid #e5e7eb" }}
         />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {filtered.map((m) => (
-            <div key={m.n} className="bg-white border border-card-border rounded-[10px] p-[14px_16px] flex items-center gap-2.5">
+            <div
+              key={m.n}
+              className="rounded-[12px] p-[16px_18px] flex items-center gap-3 transition-transform hover:-translate-y-0.5"
+              style={{ backgroundColor: "#0d1b2e", border: "1px solid rgba(255,255,255,0.08)" }}
+            >
               <div
-                className="w-[34px] h-[34px] rounded-[8px] flex items-center justify-center text-[11px] font-bold text-primary shrink-0"
-                style={{ backgroundColor: "#e8f0fc" }}
+                className="w-[38px] h-[38px] rounded-[9px] flex items-center justify-center text-[11px] font-bold shrink-0"
+                style={{ backgroundColor: "#fbbf24", color: "#0d1b2e" }}
               >
                 {m.i}
               </div>
               <div>
-                <div className="text-[12px] font-semibold" style={{ color: "#1a2744" }}>{m.n}</div>
-                <div className="text-[10px] text-soft-foreground">{m.r}</div>
+                <div className="text-[12.5px] font-semibold text-white">{m.n}</div>
+                <div className="text-[10px]" style={{ color: "rgba(255,255,255,0.5)" }}>{m.r}</div>
               </div>
             </div>
           ))}
