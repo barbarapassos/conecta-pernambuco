@@ -76,13 +76,14 @@ function Header() {
 function Hero() {
   return (
     <section id="hero" className="relative bg-primary pt-28 pb-16 px-6 md:px-11 overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: "linear-gradient(90deg, #fbbf24 0%, #fde68a 50%, #fbbf24 100%)" }} />
       <div
         className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white pointer-events-none"
         style={{ opacity: 0.03 }}
       />
       <div
-        className="absolute top-10 right-40 w-56 h-56 rounded-full bg-white pointer-events-none"
-        style={{ opacity: 0.04 }}
+        className="absolute top-10 right-40 w-56 h-56 rounded-full pointer-events-none"
+        style={{ opacity: 0.08, background: "radial-gradient(circle, #fbbf24 0%, transparent 70%)" }}
       />
       <div className="max-w-7xl mx-auto relative">
         <div
