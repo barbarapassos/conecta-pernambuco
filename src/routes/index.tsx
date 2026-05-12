@@ -4,6 +4,8 @@ import {
   Search, FileText, Megaphone, Scale, File, Heart,
   MapPin, Phone, Mail, Clock, Menu, X,
 } from "lucide-react";
+import comupeLogo from "@/assets/comupe-logo.png";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,12 +40,8 @@ function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-card-border">
       <div className="max-w-7xl mx-auto px-6 md:px-11 h-16 flex items-center justify-between">
-        <a href="#hero" className="flex items-center gap-2.5">
-          <HexIcon className="w-7 h-7" />
-          <div className="leading-tight">
-            <div className="font-bold text-[15px] text-primary tracking-tight">COMUPE</div>
-            <div className="text-[9px] text-soft-foreground">Consórcio dos Municípios Pernambucanos</div>
-          </div>
+        <a href="#hero" className="flex items-center gap-2">
+          <img src={comupeLogo} alt="COMUPE — Consórcio dos Municípios Pernambucanos" className="h-9 w-auto" />
         </a>
         <nav className="hidden md:flex items-center gap-7">
           {navLinks.map((l) => (
@@ -78,13 +76,14 @@ function Header() {
 function Hero() {
   return (
     <section id="hero" className="relative bg-primary pt-28 pb-16 px-6 md:px-11 overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: "linear-gradient(90deg, #fbbf24 0%, #fde68a 50%, #fbbf24 100%)" }} />
       <div
         className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white pointer-events-none"
         style={{ opacity: 0.03 }}
       />
       <div
-        className="absolute top-10 right-40 w-56 h-56 rounded-full bg-white pointer-events-none"
-        style={{ opacity: 0.04 }}
+        className="absolute top-10 right-40 w-56 h-56 rounded-full pointer-events-none"
+        style={{ opacity: 0.08, background: "radial-gradient(circle, #fbbf24 0%, transparent 70%)" }}
       />
       <div className="max-w-7xl mx-auto relative">
         <div
@@ -98,7 +97,7 @@ function Hero() {
           className="mt-6 text-[30px] md:text-[42px] font-bold text-white leading-[1.25] max-w-2xl"
           style={{ letterSpacing: "-0.5px" }}
         >
-          Gestão pública municipal mais <span style={{ color: "#93c5fd" }}>eficiente</span>
+          Gestão pública municipal mais <span style={{ color: "#fbbf24" }}>eficiente</span>
         </h1>
         <p
           className="mt-5 text-[13px] font-normal max-w-[360px]"
@@ -422,9 +421,8 @@ function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center gap-2">
-              <HexIcon className="w-5 h-5" color="#ffffff" />
-              <span className="text-white text-[14px] font-bold">COMUPE</span>
+            <div className="bg-white rounded-[10px] p-2 inline-block">
+              <img src={comupeLogo} alt="COMUPE" className="h-9 w-auto" />
             </div>
             <p className="mt-4 text-[10px]" style={{ color: "rgba(255,255,255,0.35)", lineHeight: 1.7 }}>
               Consórcio dos Municípios Pernambucanos<br />
