@@ -2,12 +2,14 @@
 @source "../src";
 @import "tw-animate-css";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-sans: 'Open Sans', system-ui, sans-serif;
+  --color-accent-yellow: #fbbf24;
+  --color-accent-yellow-soft: #fef3c7;
   --color-background: #ffffff;
   --color-foreground: #0d1b2e;
   --color-primary: #0F4C9A;
@@ -37,7 +39,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Open Sans', system-ui, sans-serif;
   background-color: #ffffff;
   color: #0d1b2e;
   -webkit-font-smoothing: antialiased;
