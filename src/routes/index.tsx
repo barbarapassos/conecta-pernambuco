@@ -3,6 +3,7 @@ import { useState } from "react";
 import {
   Search, FileText, Megaphone, Scale, File, Heart,
   MapPin, Phone, Mail, Clock, Menu, X,
+  Building2, ScrollText, Landmark,
 } from "lucide-react";
 import comupeLogo from "@/assets/comupe-logo.png";
 
@@ -117,18 +118,27 @@ function Hero() {
             Ver licitações →
           </a>
         </div>
-        <div
-          className="mt-10 pt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
-        >
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl">
           {[
-            { n: "+30", l: "Municípios consorciados" },
-            { n: "+200", l: "Licitações realizadas" },
-            { n: "2011", l: "Ano de fundação" },
-          ].map((s) => (
-            <div key={s.l}>
-              <div className="text-[22px] font-bold text-white">{s.n}</div>
-              <div className="text-[10px] mt-1" style={{ color: "rgba(255,255,255,0.6)" }}>{s.l}</div>
+            { n: "+30", l: "Municípios consorciados", Icon: Building2 },
+            { n: "+200", l: "Licitações realizadas", Icon: ScrollText },
+            { n: "2011", l: "Ano de fundação", Icon: Landmark },
+          ].map(({ n, l, Icon }) => (
+            <div
+              key={l}
+              className="rounded-[14px] p-[18px_20px] flex items-center gap-3.5 transition-transform hover:-translate-y-0.5"
+              style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)" }}
+            >
+              <div
+                className="w-11 h-11 rounded-[10px] flex items-center justify-center shrink-0"
+                style={{ backgroundColor: "#fbbf24" }}
+              >
+                <Icon className="w-5 h-5" style={{ color: "#0d1b2e" }} strokeWidth={2.2} />
+              </div>
+              <div>
+                <div className="text-[20px] font-bold text-white leading-none">{n}</div>
+                <div className="text-[10px] mt-1.5" style={{ color: "rgba(255,255,255,0.65)" }}>{l}</div>
+              </div>
             </div>
           ))}
         </div>
