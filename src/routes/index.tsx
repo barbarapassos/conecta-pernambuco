@@ -4,6 +4,8 @@ import {
   Search, FileText, Megaphone, Scale, File, Heart,
   MapPin, Phone, Mail, Clock, Menu, X,
 } from "lucide-react";
+import comupeLogo from "@/assets/comupe-logo.png";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,12 +40,8 @@ function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-card-border">
       <div className="max-w-7xl mx-auto px-6 md:px-11 h-16 flex items-center justify-between">
-        <a href="#hero" className="flex items-center gap-2.5">
-          <HexIcon className="w-7 h-7" />
-          <div className="leading-tight">
-            <div className="font-bold text-[15px] text-primary tracking-tight">COMUPE</div>
-            <div className="text-[9px] text-soft-foreground">Consórcio dos Municípios Pernambucanos</div>
-          </div>
+        <a href="#hero" className="flex items-center gap-2">
+          <img src={comupeLogo} alt="COMUPE — Consórcio dos Municípios Pernambucanos" className="h-9 w-auto" />
         </a>
         <nav className="hidden md:flex items-center gap-7">
           {navLinks.map((l) => (
