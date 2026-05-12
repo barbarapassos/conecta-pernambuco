@@ -321,18 +321,22 @@ function Municipios() {
           className="w-full bg-white rounded-[9px] px-4 py-2.5 text-[12px] mb-5 outline-none focus:border-primary"
           style={{ border: "1.5px solid #e5e7eb" }}
         />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {filtered.map((m) => (
-            <div key={m.n} className="bg-white border border-card-border rounded-[10px] p-[14px_16px] flex items-center gap-2.5">
+            <div
+              key={m.n}
+              className="rounded-[12px] p-[16px_18px] flex items-center gap-3 transition-transform hover:-translate-y-0.5"
+              style={{ backgroundColor: "#0d1b2e", border: "1px solid rgba(255,255,255,0.08)" }}
+            >
               <div
-                className="w-[34px] h-[34px] rounded-[8px] flex items-center justify-center text-[11px] font-bold text-primary shrink-0"
-                style={{ backgroundColor: "#e8f0fc" }}
+                className="w-[38px] h-[38px] rounded-[9px] flex items-center justify-center text-[11px] font-bold shrink-0"
+                style={{ backgroundColor: "#fbbf24", color: "#0d1b2e" }}
               >
                 {m.i}
               </div>
               <div>
-                <div className="text-[12px] font-semibold" style={{ color: "#1a2744" }}>{m.n}</div>
-                <div className="text-[10px] text-soft-foreground">{m.r}</div>
+                <div className="text-[12.5px] font-semibold text-white">{m.n}</div>
+                <div className="text-[10px]" style={{ color: "rgba(255,255,255,0.5)" }}>{m.r}</div>
               </div>
             </div>
           ))}
